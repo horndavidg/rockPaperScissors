@@ -23,46 +23,72 @@ form.addEventListener("click", function(e){
 });
 
 
-function match(h, c) {
-  if (h === "rock") {
-    if (c === "rock") {
-      ties++;
-      tieText.innerHTML = "Ties - " + ties;
-      humanChoice.checked = false;
-    }else if (c === "scissor") {
-      wins++;
-      winText.innerHTML = "Wins - " + wins;
-    } else {
-      loses++;
-      loseText.innerHTML = "Loses - " + wins;
-    }
+function match(h,c) {
+  if (h === c) {
+        alert('tie!');
+        ties++;
+        tieText.innerHTML = "Ties - " + ties;
   }
-
-  if (h === "paper") {
-    if (c === "paper") {
-      ties++;
-      tieText.innerHTML = "Ties - " + ties;
-
-    }else if (c === "rock") {
-      wins++;
-      winText.innerHTML = "Wins - " + wins;
-    } else {
-      loses++;
-      loseText.innerHTML = "Loses - " + wins;
-    }
+  else if (c === "paper" && h === "rock" ||
+         c === "scissor" && h === "paper" ||
+         c === "rock" && h === "scissor") {
+                alert('you lose!');
+                loses++;
+                loseText.innerHTML = "Loses - " + loses;
   }
-
-  if (h === "scissor") {
-    if (c === "scissor") {
-      ties++;
-      tieText.innerHTML = "Ties - " + ties;
-
-    }else if (c === "paper") {
-      wins++;
-      winText.innerHTML = "Wins - " + wins;
-    } else {
-      loses++;
-      loseText.innerHTML = "Loses - " + wins;
-    }
+  else if (h === "paper" && c === "rock" ||
+         h === "scissor" && c === "paper" ||
+         h === "rock" && c === "scissor") {
+                alert('YOU win!');
+                wins++;
+                winText.innerHTML = "Wins - " + wins;
   }
 }
+
+
+
+
+
+// function match(h, c) {
+//   if (h === "rock") {
+//     if (c === "rock") {
+//       ties++;
+//       tieText.innerHTML = "Ties - " + ties;
+//       humanChoice.checked = false;
+//     }else if (c === "scissor") {
+//       wins++;
+//       winText.innerHTML = "Wins - " + wins;
+//     } else {
+//       loses++;
+//       loseText.innerHTML = "Loses - " + wins;
+//     }
+//   }
+
+//   if (h === "paper") {
+//     if (c === "paper") {
+//       ties++;
+//       tieText.innerHTML = "Ties - " + ties;
+
+//     }else if (c === "rock") {
+//       wins++;
+//       winText.innerHTML = "Wins - " + wins;
+//     } else {
+//       loses++;
+//       loseText.innerHTML = "Loses - " + wins;
+//     }
+//   }
+
+//   if (h === "scissor") {
+//     if (c === "scissor") {
+//       ties++;
+//       tieText.innerHTML = "Ties - " + ties;
+
+//     }else if (c === "paper") {
+//       wins++;
+//       winText.innerHTML = "Wins - " + wins;
+//     } else {
+//       loses++;
+//       loseText.innerHTML = "Loses - " + wins;
+//     }
+//   }
+// }
