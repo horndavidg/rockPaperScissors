@@ -25,21 +25,21 @@ form.addEventListener("click", function(e){
 
 function match(h,c) {
   if (h === c) {
-        alert('tie!');
+        alert('Tie!');
         ties++;
         tieText.innerHTML = "Ties - " + ties;
   }
   else if (c === "paper" && h === "rock" ||
          c === "scissor" && h === "paper" ||
          c === "rock" && h === "scissor") {
-                alert('you lose!');
+                alert('You Lose!');
                 loses++;
                 loseText.innerHTML = "Loses - " + loses;
   }
   else if (h === "paper" && c === "rock" ||
          h === "scissor" && c === "paper" ||
          h === "rock" && c === "scissor") {
-                alert('YOU win!');
+                alert('You Win!');
                 wins++;
                 winText.innerHTML = "Wins - " + wins;
   }
